@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Inter',sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  flex-wrap:wrap;
+}
+
+header h3{font-size:1.2rem;}
+
+.btn{
+  padding:8px 15px;
+  background:#38bdf8;
+  color:#0f172a;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:0.9rem;
+}
+
+.hero{
+  text-align:center;
+  padding:50px 20px;
+}
+
+.hero img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #38bdf8;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:2rem;
+}
+
+.hero span{color:#38bdf8;}
+
+.hero p{
+  color:#94a3b8;
+  max-width:500px;
+  margin:auto;
+  margin-top:10px;
+}
+
+section{
+  padding:40px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+h2{text-align:center;margin-bottom:30px;}
+
+.projects{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.project{
+  background:#1e293b;
+  border-radius:12px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.project img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.project:hover{
+  transform:translateY(-5px);
+}
+
+.project-content{padding:15px;}
+.project-content p{color:#94a3b8;font-size:0.9rem;}
+
+.project-content a{
+  display:inline-block;
+  margin-top:10px;
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .projects{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h3>James Podga Bikay</h3>
+  <a href="about.html" class="btn">Voir mon profil</a>
+</header>
+
+<div class="hero">
+  <img src="profile.jpg" alt="photo profil">
+  <h1>Hi, I'm <span>James Podga Bikay</span></h1>
+  <p>Data Analyst spécialisé en analyse de données et visualisation pour aider à la prise de décision.</p>
+</div>
+
+<section id="projects">
+  <h2>Mes Projets</h2>
+  <div class="projects">
+
+    <div class="project"> 
+      <img src="dashboard.png" alt="dashboard e-commerce">
+      <div class="project-content">
+        <h3>Global Skincare E-store Analysis</h3>
+        <p>
+          Analyse de +50 000 transactions e-commerce avec Excel, identification des produits les plus rentables et recommandations business.
+        </p>
+        <a href="https://github.com/Kayserjames/Global_Skincare_and_beauty_e-store_Analysis" target="_blank">Voir sur GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1559526324-593bc073d938" alt="">
+      <div class="project-content">
+        <h3>Analyse RH</h3>
+        <p>
+          Analyse du turnover des employés avec Excel et visualisation des facteurs clés influençant les départs.
+        </p>
+        <a href="https://github.com/Kayserjames/Projet_Analyse_RH" target="_blank">Voir sur GitHub →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Podga Bikay James</p>
+</footer>
+
+</body>
+</html>
