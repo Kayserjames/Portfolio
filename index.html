@@ -3,115 +3,353 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - Data Analyst</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>James Podga Bikay | Data Analyst Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:'Inter',sans-serif;
-  background:#0f172a;
+  background:#020617;
   color:#e2e8f0;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:#0ea5e9;
+  filter:blur(150px);
+  opacity:0.08;
+  top:-100px;
+  right:-100px;
+  z-index:-1;
 }
 
 header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(14px);
+  background:rgba(2,6,23,0.7);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px;
-  flex-wrap:wrap;
 }
 
-header h3{font-size:1.2rem;}
+.logo{
+  font-size:1.1rem;
+  font-weight:700;
+}
+
+.logo span{
+  color:#38bdf8;
+}
+
+.nav-actions{
+  display:flex;
+  gap:15px;
+}
 
 .btn{
-  padding:8px 15px;
-  background:#38bdf8;
-  color:#0f172a;
-  border-radius:6px;
+  padding:10px 18px;
+  border-radius:10px;
   text-decoration:none;
   font-size:0.9rem;
+  font-weight:600;
+  transition:0.3s ease;
+}
+
+.btn-primary{
+  background:#38bdf8;
+  color:#020617;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(56,189,248,0.3);
+}
+
+.btn-outline{
+  border:1px solid rgba(56,189,248,0.5);
+  color:#38bdf8;
+}
+
+.btn-outline:hover{
+  background:#38bdf8;
+  color:#020617;
 }
 
 .hero{
-  text-align:center;
-  padding:50px 20px;
-}
-
-.hero img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #38bdf8;
-  margin-bottom:15px;
-}
-
-.hero h1{
-  font-size:2rem;
-}
-
-.hero span{color:#38bdf8;}
-
-.hero p{
-  color:#94a3b8;
-  max-width:500px;
+  min-height:90vh;
+  max-width:1200px;
   margin:auto;
-  margin-top:10px;
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  align-items:center;
+  gap:40px;
+  padding:60px 20px;
+}
+
+.hero-text small{
+  color:#38bdf8;
+  font-size:0.95rem;
+  letter-spacing:1px;
+}
+
+.hero-text h1{
+  font-size:4rem;
+  line-height:1.1;
+  margin:15px 0;
+  font-weight:800;
+}
+
+.hero-text p{
+  color:#94a3b8;
+  line-height:1.8;
+  max-width:650px;
+  font-size:1.05rem;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.stats{
+  display:flex;
+  gap:20px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.stat-card{
+  background:rgba(15,23,42,0.8);
+  border:1px solid rgba(255,255,255,0.05);
+  padding:18px;
+  border-radius:14px;
+  min-width:150px;
+}
+
+.stat-card h3{
+  color:#38bdf8;
+  font-size:1.5rem;
+}
+
+.stat-card p{
+  color:#94a3b8;
+  font-size:0.9rem;
+}
+
+.hero-image{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-image img{
+  width:340px;
+  height:340px;
+  border-radius:30px;
+  object-fit:cover;
+  border:2px solid rgba(56,189,248,0.4);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
 }
 
 section{
-  padding:40px 20px;
-  max-width:1000px;
+  max-width:1200px;
   margin:auto;
+  padding:90px 20px;
 }
 
-h2{text-align:center;margin-bottom:30px;}
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:#94a3b8;
+}
 
 .projects{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
 }
 
-.project{
-  background:#1e293b;
-  border-radius:12px;
+.project-card{
+  background:linear-gradient(180deg,#0f172a,#111827);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:24px;
   overflow:hidden;
-  transition:0.3s;
+  transition:0.4s ease;
+  position:relative;
 }
 
-.project img{
+.project-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(56,189,248,0.3);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
+
+.project-card img{
   width:100%;
-  height:180px;
+  height:230px;
   object-fit:cover;
 }
 
-.project:hover{
-  transform:translateY(-5px);
+.project-content{
+  padding:25px;
 }
 
-.project-content{padding:15px;}
-.project-content p{color:#94a3b8;font-size:0.9rem;}
+.tags{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
 
-.project-content a{
-  display:inline-block;
-  margin-top:10px;
+.tags span{
+  background:rgba(56,189,248,0.1);
   color:#38bdf8;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:0.8rem;
+}
+
+.project-content h3{
+  font-size:1.3rem;
+  margin-bottom:15px;
+}
+
+.project-content p{
+  color:#94a3b8;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.project-results{
+  margin-bottom:20px;
+}
+
+.project-results li{
+  color:#cbd5e1;
+  margin-left:18px;
+  margin-bottom:8px;
+}
+
+.project-links{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.project-links a{
   text-decoration:none;
+  color:#38bdf8;
+  font-weight:600;
+}
+
+.cta-section{
+  text-align:center;
+  background:linear-gradient(180deg,#0f172a,#111827);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:30px;
+  padding:60px 20px;
+}
+
+.cta-section h2{
+  font-size:2.3rem;
+  margin-bottom:15px;
+}
+
+.cta-section p{
+  color:#94a3b8;
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.cta-buttons{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 footer{
   text-align:center;
-  padding:20px;
-  color:#94a3b8;
+  padding:40px 20px;
+  color:#64748b;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-  .projects{
-    grid-template-columns:1fr;
-  }
+@media(max-width:900px){
+
+.hero{
+  grid-template-columns:1fr;
+  text-align:center;
+}
+
+.hero-text h1{
+  font-size:2.8rem;
+}
+
+.hero-buttons,
+.stats{
+  justify-content:center;
+}
+
+.hero-image img{
+  width:260px;
+  height:260px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-text h1{
+  font-size:2.2rem;
+}
+
+.section-title h2{
+  font-size:2rem;
+}
+
+.project-card img{
+  height:200px;
+}
+
+.navbar{
+  flex-direction:column;
+  gap:15px;
+}
+
 }
 </style>
 </head>
@@ -119,48 +357,162 @@ footer{
 <body>
 
 <header>
-  <h3>James Podga Bikay</h3>
-  <a href="about.html" class="btn">Voir mon profil</a>
+  <div class="navbar">
+    <div class="logo">James <span>Podga Bikay</span></div>
+
+    <div class="nav-actions">
+      <a href="about.html" class="btn btn-outline">Mon Profil</a>
+      <a href="https://github.com/Kayserjames" target="_blank" class="btn btn-primary">GitHub</a>
+    </div>
+  </div>
 </header>
 
-<div class="hero">
-  <img src="profile.jpeg" alt="photo profil">
-  <h1>Hi, I'm <h1>
-   <h2><span>James Podga Bikay</span></h2>
-  <p>Data Analyst spécialisé en analyse de données et visualisation pour aider à la prise de décision.</p>
-</div>
+<section class="hero">
 
-<section id="projects">
-  <h3>Mes Projets</h3>
-  <div class="projects">
+  <div class="hero-text">
+    <small>DATA ANALYST PORTFOLIO</small>
 
-    <div class="project"> 
-      <img src="https://static.vecteezy.com/system/resources/previews/034/710/582/original/ecommerce-logo-design-vector.jpg" alt="">
-      <div class="project-content">
-        <h3>Global Skincare E-store Analysis</h3>
-        <p>
-          Analyse de +50 000 transactions e-commerce avec Excel, identification des produits les plus rentables et recommandations business.
-        </p>
-        <a href="https://github.com/Kayserjames/Global_Skincare_and_beauty_e-store_Analysis" target="_blank">Voir sur GitHub →</a>
-      </div>
+    <h1>
+      Turning data into
+      actionable insights.
+    </h1>
+
+    <p>
+      Data Analyst spécialisé dans l’analyse business, la visualisation de données et le data storytelling.
+      J’aide les entreprises à transformer leurs données en décisions stratégiques grâce à Excel, SQL et Power BI.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+      <a href="about.html" class="btn btn-outline">À propos</a>
     </div>
 
-    <div class="project">
-      <img src="https://careerplus-production.storage.googleapis.com/images/2020-08/careerBLOG_HR-Analytics.jpg" alt="">
-      <div class="project-content">
-        <h4>Analyse RH</h4>
-        <p>
-          Analyse des données RH avec SQL pour comprendre les facteurs clés influençant les départs, et améliorer la gestion des employés.
-        </p>
-        <a href="https://github.com/Kayserjames/Projet_Analyse_RH" target="_blank">Voir sur GitHub →</a>
+    <div class="stats">
+
+      <div class="stat-card">
+        <h3>2+</h3>
+        <p>Projets Data</p>
       </div>
+
+      <div class="stat-card">
+        <h3>50k+</h3>
+        <p>Données analysées</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>100%</h3>
+        <p>Data Driven</p>
+      </div>
+
     </div>
 
   </div>
+
+  <div class="hero-image">
+    <img src="profile.jpg" alt="James Podga Bikay">
+  </div>
+
+</section>
+
+<section id="projects">
+
+  <div class="section-title">
+    <h2>Featured Projects</h2>
+    <p>Quelques projets réalisés en analyse et visualisation de données.</p>
+  </div>
+
+  <div class="projects">
+
+    <div class="project-card">
+
+      <img src="dashboard.png" alt="dashboard ecommerce">
+
+      <div class="project-content">
+
+        <div class="tags">
+          <span>Excel</span>
+          <span>Dashboard</span>
+          <span>E-commerce</span>
+        </div>
+
+        <h3>Global Skincare E-store Analysis</h3>
+
+        <p>
+          Analyse de plus de 50 000 transactions e-commerce afin d’identifier les catégories de produits les plus rentables et les tendances d’achat des clients.
+        </p>
+
+        <ul class="project-results">
+          <li>Analyse des ventes et profits</li>
+          <li>Identification des produits performants</li>
+          <li>Création d’un dashboard interactif</li>
+        </ul>
+
+        <div class="project-links">
+          <a href="https://github.com/Kayserjames/Global_Skincare_and_beauty_e-store_Analysis" target="_blank">GitHub ↗</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="project-card">
+
+      <img src="https://images.unsplash.com/photo-1559526324-593bc073d938" alt="RH analysis">
+
+      <div class="project-content">
+
+        <div class="tags">
+          <span>Excel</span>
+          <span>HR Analytics</span>
+          <span>Visualization</span>
+        </div>
+
+        <h3>HR Analytics Project</h3>
+
+        <p>
+          Analyse des données RH pour comprendre les facteurs influençant le turnover des employés et améliorer la prise de décision RH.
+        </p>
+
+        <ul class="project-results">
+          <li>Étude du turnover des employés</li>
+          <li>Visualisation des indicateurs RH</li>
+          <li>Recommandations basées sur les données</li>
+        </ul>
+
+        <div class="project-links">
+          <a href="https://github.com/Kayserjames/Projet_Analyse_RH" target="_blank">GitHub ↗</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="cta-section">
+
+    <h2>Let’s build data-driven solutions together.</h2>
+
+    <p>
+      À la recherche d’opportunités en Data Analytics, Business Intelligence et Data Visualization.
+      Disponible pour des collaborations, stages et opportunités professionnelles.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="mailto:podgabikayjames@gmail.com" class="btn btn-primary">Me contacter</a>
+      <a href="https://linkedin.com/in/james-podga-bikay-3816ab372" target="_blank" class="btn btn-outline">LinkedIn</a>
+    </div>
+
+  </div>
+
 </section>
 
 <footer>
-  <p>© 2026 Podga Bikay James</p>
+  © 2026 James Podga Bikay • Data Analyst Portfolio
 </footer>
 
 </body>
